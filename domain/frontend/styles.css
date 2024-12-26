@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+    overflow: hidden;
+  }
+  
+  header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;  /* Alinha o conteúdo no centro */
+    z-index: 10;
+  }
+  
+  .logo-container {
+    width: 100%;  /* A logo ocupa a largura total do header */
+  }
+  
+  .logo {
+    width: 40%;  /* Reduz o tamanho da logo para 40% da largura */
+    max-width: 300px;  /* Limita o tamanho máximo da logo */
+    height: auto;  /* Garante que a altura seja ajustada proporcionalmente */
+  }
+  
+  .game {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    border-bottom: 30px solid green;
+  }
+  
+  .start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .start-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background: green;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .start-button:hover {
+    background: darkgreen;
+  }
+  
+  .game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 3;
+  }
+  
+  .game-over h1 {
+    font-size: 3rem;
+    color: red;
+    text-align: center;
+  }
+  
+  .restart {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background: green;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .restart:hover {
+    background: darkgreen;
+  }
+  
+  .pipe {
+    position: absolute;
+    bottom: 0;
+    right: -80px;
+    width: 80px;
+  }
+  
+  .pipe-animation {
+    animation: pipe-animation 2s infinite linear;
+  }
+  
+  @keyframes pipe-animation {
+    from {
+      right: -80px;
+    }
+    to {
+      right: 100%;
+    }
+  }
+  
+  .mario {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 150px;
+  }
+  
+  .jump {
+    animation: jump 800ms ease-out;
+  }
+  
+  @keyframes jump {
+    0% {
+      bottom: 0;
+    }
+    50% {
+      bottom: 200px;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+  
